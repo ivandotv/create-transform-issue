@@ -38,7 +38,7 @@ describe('Mobx Test', () => {
     reaction(
       () => {
         return {
-          name: dtoName(item1.id),
+          name: dtoName(item1.name),
         }
       },
       data => {}
@@ -57,12 +57,12 @@ describe('Mobx Test', () => {
     item1.name = 'bob'
     item1.name = 'jack'
     item1.name = 'bob'
-    // 2 calls for the above code
+    // 4 calls for the above code
     // --------------
     item2.name = 'jack' // +1 for calls
     item2.name = 'bob' // +1 for calls
     item2.name = 'jack' // +1 for calls
 
-    expect(serializeName).toBeCalledTimes(5)
+    expect(serializeName).toBeCalledTimes(6)
   })
 })
