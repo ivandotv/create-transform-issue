@@ -59,10 +59,10 @@ describe('Mobx Test', () => {
     item1.name = 'bob'
     // 4 calls for the above code
     // --------------
-    item2.name = 'jack' // +1 for calls
-    item2.name = 'bob' // +1 for calls
-    item2.name = 'jack' // +1 for calls
-
+    item2.name = 'jack'
+    item2.name = 'bob'
+    item2.name = 'jack'
+    // we are at 6 here
     expect(serializeName).toBeCalledTimes(6)
   })
 })
