@@ -31,28 +31,6 @@ beforeEach(() => {
   })
 })
 describe('Mobx Test', () => {
-  test('Create transform one reaction', () => {
-    const item1 = new Item(1, 'jack')
-    const item2 = new Item(2, 'bob')
-
-    reaction(
-      () => {
-        return {
-          name: dtoName(item1.id),
-        }
-      },
-      data => {}
-    )
-
-    item1.name = 'bob'
-    item1.name = 'jack'
-    item1.name = 'bob'
-    item1.name = 'jack'
-    item1.name = 'bob'
-
-    expect(serializeName).toBeCalledTimes(1)
-  })
-
   test('Create transform - change second object', () => {
     const item1 = new Item(1, 'jack')
     const item2 = new Item(2, 'bob')
